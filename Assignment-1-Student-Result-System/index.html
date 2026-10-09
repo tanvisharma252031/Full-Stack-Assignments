@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal | Registration & Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a class="brand" href="#">Student Portal</a>
+        <nav>
+            <a href="#registration">Registration</a>
+            <a href="#result">Result</a>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <!-- Student Registration Form -->
+        <section class="panel" id="registration">
+            <p class="eyebrow">STUDENT SERVICES</p>
+            <h1>Student Registration</h1>
+            <p class="subheading">
+                Enter student details and marks to generate a result.
+            </p>
+
+            <form id="studentForm" novalidate>
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="studentName">Student Name</label>
+                        <input type="text" id="studentName"
+                               placeholder="Enter student name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email"
+                               placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone"
+                               maxlength="10" inputmode="numeric"
+                               placeholder="10-digit phone number" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="course">Course</label>
+                        <select id="course" required>
+                            <option value="">Select course</option>
+                            <option>B.Tech CSE</option>
+                            <option>BCA</option>
+                            <option>B.Sc. Computer Science</option>
+                            <option>B.Sc IT</option>
+                            <option>MCA</option>
+                            <option>M.Sc. Data Science</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="htmlMarks">HTML Marks (out of 100)</label>
+                        <input type="number" id="htmlMarks"
+                               min="0" max="100" step="1"
+                               placeholder="Enter marks" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="cssMarks">CSS Marks (out of 100)</label>
+                        <input type="number" id="cssMarks"
+                               min="0" max="100" step="1"
+                               placeholder="Enter marks" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="jsMarks">JavaScript Marks (out of 100)</label>
+                        <input type="number" id="jsMarks"
+                               min="0" max="100" step="1"
+                               placeholder="Enter marks" required>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">
+                        Generate Result →
+                    </button>
+                    <button type="reset" class="secondary-button">
+                        Clear Form
+                    </button>
+                </div>
+
+                <p id="formMessage" class="form-message"
+                   role="alert" aria-live="polite"></p>
+
+                <p class="form-note">
+                    Pass criteria: at least 35 marks in each subject.
+                </p>
+            </form>
+        </section>
+
+        <!-- Student Result Card -->
+        <section class="panel result-panel" id="result">
+            <div class="result-heading">
+                <div>
+                    <p class="eyebrow">ACADEMIC SUMMARY</p>
+                    <h2>Student Result</h2>
+                </div>
+                <span id="statusBadge" class="status-badge neutral">
+                    Awaiting result
+                </span>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <p>Your student's result will appear here.</p>
+                <span>Fill in the form above and select Generate Result.</span>
+            </div>
+
+            <div id="resultContent" hidden>
+                <div class="student-summary">
+                    <div>
+                        <span class="detail-label">Student Name</span>
+                        <strong id="outName"></strong>
+                    </div>
+                    <div>
+                        <span class="detail-label">Email</span>
+                        <strong id="outEmail"></strong>
+                    </div>
+                    <div>
+                        <span class="detail-label">Phone</span>
+                        <strong id="outPhone"></strong>
+                    </div>
+                    <div>
+                        <span class="detail-label">Course</span>
+                        <strong id="outCourse"></strong>
+                    </div>
+                </div>
+
+                <h3 class="marks-title">Marks Breakdown</h3>
+
+                <div class="marks-grid">
+                    <div class="mark-card">
+                        <span>HTML</span>
+                        <strong id="outHtml">0</strong>
+                        <small>/ 100</small>
+                    </div>
+
+                    <div class="mark-card">
+                        <span>CSS</span>
+                        <strong id="outCss">0</strong>
+                        <small>/ 100</small>
+                    </div>
+
+                    <div class="mark-card">
+                        <span>JavaScript</span>
+                        <strong id="outJs">0</strong>
+                        <small>/ 100</small>
+                    </div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <span>Total Marks</span>
+                        <strong id="outTotal">0 / 300</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Percentage</span>
+                        <strong id="outPercentage">0.00%</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Student Portal • Registration & Result Management
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

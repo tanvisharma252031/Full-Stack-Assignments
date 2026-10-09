@@ -1,0 +1,440 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2447d8;
+    --blue-dark: #1936b2;
+    --blue-pale: #f0f4ff;
+    --ink: #20263a;
+    --muted: #6f778b;
+    --line: #e0e5ef;
+    --green: #16845b;
+    --red: #c93e50;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #f6f8fc;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.topbar {
+    min-height: 68px;
+    background: var(--blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6.5%;
+    gap: 24px;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.topbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.topbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 23px 0;
+}
+
+.topbar nav a:hover {
+    text-decoration: underline;
+}
+
+.page {
+    width: min(920px, 87%);
+    margin: 36px auto 24px;
+}
+
+.panel {
+    background: white;
+    border: 1px solid #e8ebf3;
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 8px 26px rgba(28, 43, 84, 0.055);
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.25px;
+    margin: 0 0 5px;
+}
+
+h1, h2 {
+    margin: 0;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.subheading {
+    color: var(--muted);
+    margin: 7px 0 0;
+    font-size: 13px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 22px;
+    margin-top: 25px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.field label {
+    font-size: 12px;
+    color: #3e465b;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    height: 43px;
+    border: 1px solid #d9dfeb;
+    border-radius: 6px;
+    padding: 0 12px;
+    background: white;
+    color: var(--ink);
+    font: inherit;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #7087f0;
+    box-shadow: 0 0 0 3px rgba(36, 71, 216, 0.10);
+}
+
+input.invalid, select.invalid {
+    border-color: var(--red);
+}
+
+.form-actions {
+    display: flex;
+    gap: 11px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.primary-button {
+    min-height: 42px;
+    background: var(--blue);
+    color: white;
+    border: 1px solid var(--blue);
+    border-radius: 6px;
+    padding: 0 18px;
+    font-weight: bold;
+}
+
+.primary-button:hover {
+    background: var(--blue-dark);
+}
+
+.secondary-button {
+    min-height: 42px;
+    padding: 0 16px;
+    border: 1px solid #dce2ee;
+    border-radius: 6px;
+    background: white;
+    color: #596176;
+    font-weight: 600;
+}
+
+.form-message {
+    margin: 8px 0 0;
+    color: var(--red);
+    font-size: 12px;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+.form-note {
+    margin: 8px 0 0;
+    color: #8a92a5;
+    font-size: 11px;
+}
+
+.result-panel {
+    border-left: 4px solid var(--blue);
+}
+
+.result-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.status-badge {
+    display: inline-flex;
+    border-radius: 30px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.status-badge.neutral {
+    background: #f0f2f7;
+    color: #6f778b;
+}
+
+.status-badge.pass {
+    background: #e7f7ef;
+    color: var(--green);
+}
+
+.status-badge.fail {
+    background: #fff0f1;
+    color: var(--red);
+}
+
+.empty-state {
+    margin-top: 23px;
+    border: 1px dashed #dce2ee;
+    background: #fbfcff;
+    border-radius: 9px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 18px;
+}
+
+.empty-state p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.empty-state span {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.student-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 22px;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.student-summary > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow-wrap: anywhere;
+}
+
+.detail-label {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.student-summary strong {
+    font-size: 13px;
+}
+
+.marks-title {
+    font-size: 12px;
+    margin: 19px 0 10px;
+}
+
+.marks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.mark-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fcfdff;
+    padding: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.mark-card span {
+    width: 100%;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.mark-card strong {
+    font-size: 22px;
+}
+
+.mark-card small {
+    color: #8b93a5;
+    font-size: 11px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.metric {
+    background: var(--blue-pale);
+    border-radius: 8px;
+    padding: 13px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.metric span {
+    color: #59688f;
+    font-size: 11px;
+}
+
+.metric strong {
+    font-size: 19px;
+    color: var(--blue-dark);
+}
+
+footer {
+    text-align: center;
+    color: #9299aa;
+    font-size: 11px;
+    padding: 5px 0 20px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 640px) {
+    .topbar {
+        min-height: 62px;
+        padding: 0 5%;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .topbar nav {
+        gap: 16px;
+    }
+
+    .topbar nav a {
+        font-size: 12px;
+        padding: 21px 0;
+    }
+
+    .page {
+        width: 92%;
+        margin-top: 20px;
+    }
+
+    .panel {
+        padding: 21px 18px;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 21px;
+    }
+
+    input, select {
+        height: 44px;
+    }
+
+    .primary-button, .secondary-button {
+        flex: 1;
+        padding: 0 10px;
+    }
+
+    .result-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .student-summary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .marks-grid {
+        gap: 7px;
+    }
+
+    .mark-card {
+        padding: 10px 8px;
+    }
+
+    .mark-card strong {
+        font-size: 19px;
+    }
+
+    .metric {
+        padding: 12px 10px;
+    }
+
+    .metric strong {
+        font-size: 17px;
+    }
+}
