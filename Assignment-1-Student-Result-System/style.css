@@ -4,12 +4,12 @@
 }
 
 :root {
-    --blue: #2447d8;
-    --blue-dark: #1936b2;
-    --blue-pale: #f0f4ff;
-    --ink: #20263a;
-    --muted: #6f778b;
-    --line: #e0e5ef;
+    --blue: #92c5d1;
+    --blue-dark: #6daab9;
+    --blue-pale: #edf7f9;
+    --ink: #263940;
+    --muted: #6f8187;
+    --line: #dce9ec;
     --green: #16845b;
     --red: #c93e50;
 }
@@ -20,7 +20,7 @@ html {
 
 body {
     margin: 0;
-    background: #f6f8fc;
+    background: #f7fafb;
     color: var(--ink);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -30,7 +30,7 @@ body {
 .topbar {
     min-height: 68px;
     background: var(--blue);
-    color: white;
+    color: #203940;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,7 +39,7 @@ body {
 }
 
 .brand {
-    color: white;
+    color: #203940;
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -51,7 +51,7 @@ body {
 }
 
 .topbar nav a {
-    color: white;
+    color: #203940;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -69,15 +69,15 @@ body {
 
 .panel {
     background: white;
-    border: 1px solid #e8ebf3;
+    border: 1px solid #e2ecee;
     border-radius: 12px;
     padding: 28px 32px;
-    box-shadow: 0 8px 26px rgba(28, 43, 84, 0.055);
+    box-shadow: 0 8px 26px rgba(42, 85, 96, 0.06);
     margin-bottom: 24px;
 }
 
 .eyebrow {
-    color: var(--blue);
+    color: var(--blue-dark);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 1.25px;
@@ -119,14 +119,14 @@ h2 {
 
 .field label {
     font-size: 12px;
-    color: #3e465b;
+    color: #3e535a;
     font-weight: bold;
 }
 
 input, select {
     width: 100%;
     height: 43px;
-    border: 1px solid #d9dfeb;
+    border: 1px solid #d5e2e5;
     border-radius: 6px;
     padding: 0 12px;
     background: white;
@@ -136,8 +136,8 @@ input, select {
 }
 
 input:focus, select:focus {
-    border-color: #7087f0;
-    box-shadow: 0 0 0 3px rgba(36, 71, 216, 0.10);
+    border-color: var(--blue-dark);
+    box-shadow: 0 0 0 3px rgba(146, 197, 209, 0.25);
 }
 
 input.invalid, select.invalid {
@@ -159,25 +159,33 @@ button {
 .primary-button {
     min-height: 42px;
     background: var(--blue);
-    color: white;
+    color: #203940;
     border: 1px solid var(--blue);
     border-radius: 6px;
     padding: 0 18px;
     font-weight: bold;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .primary-button:hover {
     background: var(--blue-dark);
+    border-color: var(--blue-dark);
+    color: white;
 }
 
 .secondary-button {
     min-height: 42px;
     padding: 0 16px;
-    border: 1px solid #dce2ee;
+    border: 1px solid #dce7e9;
     border-radius: 6px;
     background: white;
-    color: #596176;
+    color: #596b72;
     font-weight: 600;
+}
+
+.secondary-button:hover {
+    background: var(--blue-pale);
+    border-color: var(--blue);
 }
 
 .form-message {
@@ -192,7 +200,7 @@ button {
 
 .form-note {
     margin: 8px 0 0;
-    color: #8a92a5;
+    color: #89999e;
     font-size: 11px;
 }
 
@@ -216,8 +224,8 @@ button {
 }
 
 .status-badge.neutral {
-    background: #f0f2f7;
-    color: #6f778b;
+    background: #f0f3f4;
+    color: #6f8187;
 }
 
 .status-badge.pass {
@@ -232,8 +240,8 @@ button {
 
 .empty-state {
     margin-top: 23px;
-    border: 1px dashed #dce2ee;
-    background: #fbfcff;
+    border: 1px dashed #cbdfe3;
+    background: #f8fcfd;
     border-radius: 9px;
     min-height: 120px;
     display: flex;
@@ -295,7 +303,7 @@ button {
 .mark-card {
     border: 1px solid var(--line);
     border-radius: 8px;
-    background: #fcfdff;
+    background: #fbfdfe;
     padding: 14px;
     display: flex;
     align-items: baseline;
@@ -311,10 +319,11 @@ button {
 
 .mark-card strong {
     font-size: 22px;
+    color: #416f7b;
 }
 
 .mark-card small {
-    color: #8b93a5;
+    color: #8b9ba0;
     font-size: 11px;
 }
 
@@ -327,6 +336,7 @@ button {
 
 .metric {
     background: var(--blue-pale);
+    border: 1px solid #e1eff1;
     border-radius: 8px;
     padding: 13px 15px;
     display: flex;
@@ -335,18 +345,18 @@ button {
 }
 
 .metric span {
-    color: #59688f;
+    color: #58747c;
     font-size: 11px;
 }
 
 .metric strong {
     font-size: 19px;
-    color: var(--blue-dark);
+    color: #416f7b;
 }
 
 footer {
     text-align: center;
-    color: #9299aa;
+    color: #929fa4;
     font-size: 11px;
     padding: 5px 0 20px;
 }
